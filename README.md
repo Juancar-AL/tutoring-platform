@@ -29,12 +29,15 @@ Later:
 
 ## Tech stack
 
-| Layer      | Tools                                   |
-|------------|-----------------------------------------|
-| Language   | Python 3.14                             |
-| API        | FastAPI, Pydantic                       |
-| Database   | SQLAlchemy 2.0, Alembic, SQLite → Postgres |
-| Tooling    | uv, Ruff, pytest                        |
+| Layer          | Tools                                              |
+|----------------|----------------------------------------------------|
+| Language       | Java 25                                            |
+| Framework      | Spring Boot 4.1 (Spring Framework 7)               |
+| Build          | Gradle 9 (Kotlin DSL)                              |
+| Persistence    | Spring Data JPA, Hibernate 7, PostgreSQL, Flyway   |
+| Security       | Spring Security 7, JWT                             |
+| Testing        | JUnit 5, Testcontainers                            |
+| Infrastructure | Docker, GitHub Actions                             |
 
 ## Domain model
 
@@ -51,33 +54,11 @@ Each student belongs to exactly one tutor; every query is scoped by tutor
 
 ## Getting started
 
-Requirements: [uv](https://docs.astral.sh/uv/).
+> Setup instructions will be added once the Spring Boot project is created.
 
-```bash
-git clone https://github.com/Juancar-AL/tutoring-platform.git
-cd tutoring-platform/backend
-uv sync
-cp .env.example .env
-uv run fastapi dev src/tutoring/main.py
-```
+## Documentation
 
-Run checks:
-
-```bash
-uv run ruff check .
-uv run pytest
-```
-
-## Project structure
-
-```
-backend/
-├── src/tutoring/
-│   ├── core/       # shared config and base models
-│   ├── students/   # student domain
-│   └── main.py     # FastAPI entry point
-└── tests/
-```
+- [Software Requirements Specification](docs/srs.md)
 
 ## Roadmap
 

@@ -111,7 +111,7 @@ account is operated by the student or by the guardian (decision D-02).
   processing of their personal data. By product policy, Grulla requires
   guardian data and consent for every student under 16 (decision D-03).
 - **Organizational:** one developer, about 10 hours per week, budget close to 0 €.
-- **Technical:** backend in Python with FastAPI; native mobile client.
+- **Technical:** backend in Java with Spring Boot; native mobile client.
 - **Privacy:** only the data in §3.6.1 is collected (data minimisation).
 
 ### 2.5 Assumptions and dependencies
@@ -277,7 +277,7 @@ Conceptual model (no technical types or ids). Diagram: `docs/domain-model.png` (
 - INV-09: a lesson is counted in at most one charge.
 
 ### 3.5 Design constraints
-- Backend: Python 3.14, FastAPI, SQLAlchemy 2.0, Alembic, PostgreSQL in production.
+- Backend: Java 25, Spring Boot 4.1, Gradle (Kotlin DSL), Spring Data JPA (Hibernate 7), Flyway, PostgreSQL in production.
 - Client: native mobile app (technology to be decided in M7).
 - Budget close to 0 €: free tiers of hosting and email services.
 
@@ -302,7 +302,7 @@ Conceptual model (no technical types or ids). Diagram: `docs/domain-model.png` (
 | ID | Requirement |
 | --- | --- |
 | NFR-11 | Backend test coverage of at least 80 % |
-| NFR-12 | Code passes ruff and the CI pipeline on every push |
+| NFR-12 | Code passes the formatter check (Spotless) and the CI pipeline on every push |
 
 #### 3.6.4 Portability and localisation
 | ID | Requirement |
@@ -310,7 +310,7 @@ Conceptual model (no technical types or ids). Diagram: `docs/domain-model.png` (
 | NFR-13 | The interface is available in Spanish and English; all texts are externalised, none hard-coded |
 
 #### Definition of Done
-A user story is done when: its acceptance criteria and scenarios pass as automated tests, ruff reports no errors, CI is green, related NFRs are respected and the change has been reviewed.
+A user story is done when: its acceptance criteria and scenarios pass as automated tests, the formatter check passes, CI is green, related NFRs are respected and the change has been reviewed.
 
 ## 4. Verification
 <!-- TBD: verification method per requirement, quality checklist, traceability matrix -->
